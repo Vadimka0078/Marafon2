@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заверстай</title>
+    <link rel="stylesheet" href="css/css reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('a[href*=#]').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+                && location.hostname == this.hostname) {
+                    var $target = $(this.hash);
+                    $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+                    if ($target.length) {
+                        var targetOffset = $target.offset().top;
+                        $('html,body').animate({scrollTop: targetOffset}, 500);//скорость прокрутки
+                        return false;
+                    }
+                }
+            });
+        });
+        </script>
+</head>
+<body>
+
+    <!-- header__start -->
+
+    <header class="header">  
+        <div class="wrapper">
+          <div class="header__wrapper">
+            <div class="header__logo">
+                <a href="/" class="header__logo-link">
+                    <img src="/img/logo.svg" alt="logo" class="header__logo-pic">
+                </a>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="#aricles_b" class="header__link">Статьи</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#info__about" class="header__link">Обо мне</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#portfolio_b" class="header__link">Портфолио</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#contact__form" class="header__link">Написать мне</a>
+                    </li>
+                </ul>
+            </nav>
+          </div>
+        </div>
+    </header> 
+    
+    <!-- header__end -->
+
+    <!-- main start -->
+
+    <main class="main">
+        <section class="intro">
+            <div class="wrapper">
+                <div class="intro___title">
+                    <h1 class="intro__title" id="aricles_b">Все статьи</h1>
+                        <div class="theme">
+                         <select class="filter" name="themme" id="theme__button" size="1">
+                             <option selected>Выбрать тему</option>
+                             <option value="tours">путешествия</option>
+                             <option value="cities">город</option>
+                             <option value="books">книги</option>
+                             <option value="photos">фотографии</option>
+                             <option value="recipes">рецепты</option>
+                             <option value="all">все статьи</option>
+                         </select>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- articles__start -->
+
+        <section class="articles">
+            <div class="wrapper">
+                <div class="articles__cards">
+                    <article class="article__card" data-category="tours">
+                        <div class="article__card__pic">
+                            <a href="../Marafon_motivation/index.html" class="article__card_href">
+                                <img src="/img/article_1.png" alt="Путешествие в Берлин в августе" class="article__card-img">
+                            </a>
+                        </div>
+                        <h3 class="article__card-title">Путешествие в Берлин в августе</h3>
+                        <p class="article__card-desc">
+                            Летний месяц я провела в столице Германии вместе с друзьями. И вот как это было!
+                        </p>
+                        <p class="article__card-tag">
+                            Теги: путешествия<time class="article__card-date">29.09.2020</time>
+                        </p>
+                    </article>
+                    <article class="article__card" data-category="cities">
+                        <div class="article__card__pic">
+                            <a href="../Marafon_motivation/index.html" class="article__card_href">
+                                <img src="/img/article_2.png" alt="Где выпить колдбрю в Москве" class="article__card-img">
+                            </a>
+                        </div>
+                        <h3 class="article__card-title">Где выпить колдбрю в Москве</h3>
+                        <p class="article__card-desc">
+                            Собрала для вас список любимых кофеен,
+                            где подают лучший летний напиток. 
+                        </p>
+                        <p class="article__card-tag">
+                            Теги: город<time class="article__card-date">24.07.2020</time>
+                        </p>
+                    </article>
+                    <article class="article__card" data-category="books">
+                        <div class="article__card__pic">
+                            <a href="../Marafon_motivation/index.html" class="article__card_href">
+                                <img src="/img/article_3.png" alt="Прочитано: книжные рекомендации" class="article__card-img">
+                            </a>
+                        </div>
+                        <h3 class="article__card-title">Прочитано: книжные рекомендации</h3>
+                        <p class="article__card-desc">
+                            Рассказываю о прочитанных за последнее время книгах: фавориты и провалы.
+                        </p>
+                        <p class="article__card-tag">
+                            Теги: книги <time class="article__card-date">15.07.2020</time>
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="articles__inside">
+            <div class="wrapper">
+                <div class="articles__inside-cards">
+                    <a href="../Marafon_motivation/index.html" class="article__card_href">
+                        <article class="article__inside-card article__card" data-category="photos">
+                            <div class="articles__inside-pic1">
+                                <h3 class="article__card-title-inside">Снимки на плёнку</h3>
+                                <p class="article__inside-card-desc">
+                                    Поделилась с вами весенними фотографиями, 
+                                    и секретами удачных снимков.
+                                </p>
+                                <p class="article__inside-card-tag">
+                                    Теги: фотографии <time class="article__inside-card-date">29.06.2020</time> 
+                                </p> 
+                            </div>
+                        </article>
+                    </a>
+                    <a href="../Marafon_motivation/index.html" class="article__card_href">
+                        <article class="article__inside-card article__card" data-category="recipes">
+                            <div class="articles__inside-pic2">
+                                <h3 class="article__card-title-inside">Домашний чизкейк </h3> 
+                                <p class="article__inside-card-desc">
+                                    Что может быть лучше чизкейка с сезонными
+                                    ягодами? Только домашний чизкейк!  
+                                </p>
+                                <p class="article__inside-card-tag">
+                                    Теги: рецепты <time class="article__inside-card-date">24.06.2020</time>
+                                </p> 
+                            </div>
+                        </article>
+                    </a>
+                </div>
+                <div class="button__more">
+                    <button type="button">
+                        <p class="bt__text">
+                            Показать ещё
+                        </p>
+                    </button>
+                </div>
+            </div>
+    </section>
+    <!-- articles__end -->
+
+    <!-- about-info__start -->
+
+        <section class="about__me" id="info__about">
+            <div class="wrapper">
+                <div class="title__about-me">
+                    <h2 class="title__about__me">Обо мне</h2>
+                </div>
+                <div class="main__about">
+                    <div class="about__left">
+                        <img src="/img/ABOUT.jpg" alt="Фото Анны" class="about__me-left">
+                    </div>
+                    <div class="main__right">
+                        <p class="about__info">
+                            Всем привет! Меня зовут Аня, и это мой личный блог.
+                            Здесь ты найдёшь рассказы о моих путешествиях, снимки
+                            на плёнку, рецепты, обзоры на книги. В общем, тексты о том,
+                            что мне инетресно.<br><br>
+
+                            Я работаю копирайтером, поэтому мой блоге — это ещё и моё
+                            портфолио. Ниже размещены несколько моих лучших
+                            рабочих текстов. Буду рада новым сотрудничествам!<br><br>Если вы хотите написать мне — это можно сделать в соцсетях
+                            или через <u>форму.</u> Всегда приятно услышать обратную связь
+                            от читателей и познакомиться поближе.<br><br>
+
+                            Приятного чтения!
+                        </p>
+                        <div class="about__citate">
+                            <p class="about__info_citate">
+                                Я верю, что каждый раз пробуя новое,
+                                выходящее за зону моего комфорта,
+                                я действительно узнаю настояющую
+                                себя. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- about-info__end -->
+
+    <!-- portfolio__start -->
+
+        <section class="portfolio" id="portfolio_b">
+            <div class="wrapper">
+                <div class="portfolio__title">
+                    <h2 class="portfolio-title">Портфолио</h2>
+                </div>
+                <div class="portfolio__cards">
+                    <div class="portfolio__card pic1">
+                        <div class="portfolio-card">
+                            <h3 class="portfolio__name">Блог HTML Academy</h3>
+                            <h4 class="portfolio-card__title">«Как учиться продуктивно»</h4>
+                            <p class="portfolio-desc pd1">Про основные методы обучения,
+                                которые помогут быстро и надолго
+                                запомнить информацию.</p> 
+                        </div>
+                    </div>
+                    <div class="portfolio__card pic2">
+                        <div class="portfolio-card white">
+                            <h3 class="portfolio__name">Журнал «LNK»</h3>
+                            <h4 class="portfolio-card__title pn2">«Зачем поцели нужны человеку?
+                                <br>И какие они бывают»</h4>
+                            <p class="portfolio-desc pd2">Поцелуи — повсеместная ежедневная
+                                практика. Но зачем люди целуются?
+                                Какие смысли вкладывают в этот ритуал?
+                                И где корни этой практики?</p> 
+                        </div>
+                    </div>
+                    <div class="portfolio__card pic3">
+                        <div class="portfolio-card">
+                            <h3 class="portfolio__name">Журнал «Т — Л»</h3>
+                            <h4 class="portfolio-card__title pn3">«Советы по эффективной
+                                удалённой работе»</h4>
+                            <p class="portfolio-desc pd3">Поделилась лайфхаками, которые помогают
+                                мне работать продуктивно из дома. </p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="button__more">
+                    <button type="button">
+                        <p class="bt__text">
+                            Показать ещё
+                        </p>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    <!-- portfolio__end -->
+
+    <!-- form-contact__start -->
+
+        <section class="write__me" id="contact__form">
+                <div class="write__me-title">
+                    <h3 class="write-title">Написать мне</h3>
+                </div>
+                <div class="message__form">
+                    <div class="wrapper__form">
+                    <form class="form_comment" action="#" name="newform" method="POST">
+                        <div class="form__inputs">
+                                <h4 class="title__form-name">Ваше имя<p><input minlength="3" required class="log" type="text" placeholder="Иван Иванов"></p></h4>
+                                <h4 class="title-email">Email<p><input minlength="10" required type="email" class="email" placeholder="google@gmail.com"></p></h4>   
+                        </div>
+                        <h4 class="message__ms">Сообщение</h4>
+                        <textarea minlength="10"  maxlength="200" name="text" class="comment" placeholder="Напишите здесь ваше сообщение."></textarea>
+                        <div class="button__block">
+                            <input type="submit" value="ОТПРАВИТЬ" class="btsub">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section> 
+
+    <!-- form-contact__end -->
+
+    </main>
+
+    <!-- main__end -->
+
+    <!-- footer__start -->
+
+    <footer>
+        <div class="wrapper_footer">
+            <div class="social">
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#!" class="footer__link">ВК</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#!" class="footer__link">Телеграм</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#!" class="footer__link">Инстаграм</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#!" class="footer__link">Твиттер</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- footer__end -->
+ <script src="/JS/filter.js"></script>
+ <script src="/JS/comments.js"></script>
+</body>
+</html>
